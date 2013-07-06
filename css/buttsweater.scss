@@ -169,7 +169,7 @@ td.emulate { background-color: #40A662; color: #fff; }
 }
 .rail h1:hover,
 .rail h1:focus {
-	color: inherit;
+	color: $linkFocusColor;
 }
 
 .rail img {
