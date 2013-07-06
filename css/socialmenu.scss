@@ -17,7 +17,13 @@
 .social a {
 	text-decoration: none;
 	display: inline-block;
-	padding: 0 .25em;
+	margin-left: .4em;
+	text-indent: -9999px;
+	width: 32px;
+	height: 32px;
+}
+.social a:first-child {
+	margin-left: 0;
 }
 .social a:link,
 .social a:visited {

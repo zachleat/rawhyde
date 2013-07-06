@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>{% if page.title %}{{ page.title }}—{{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-		<link href="/feed/" rel="alternate" title="{{ site.title }} Posts" type="application/atom+xml">
+		<meta name="dist" content="{{ site.distFolder }}">
+		<link href="{{ site.baseurl }}/feed/" rel="alternate" title="{{ site.title }} Posts" type="application/atom+xml">
 
 		<link href="{{ site.distFolder }}global.min.css" rel="stylesheet">
 	</head>
@@ -19,12 +20,12 @@
 				<nav role="navigation">
 					<div class="navigation">
 						<div class="social">
-							<a href="//twitter.com/{{ site.twitter }}" class="twitter" title="@{{ site.twitter }} on Twitter">{{ site.twitter }}</a>
-							<a href="//github.com/{{ site.github }}/" class="github" title="@{{ site.github }} on GitHub">{{ site.github }}</a>
-							<a href="{{ site.baseurl }}/feed/" class="rss" title="RSS Feed">RSS</a>
+							<a href="//twitter.com/{{ site.twitter }}" class="twitter icon-twitter" title="@{{ site.twitter }} on Twitter">Twitter</a>
+							<a href="//github.com/{{ site.github }}/" class="github icon-github" title="@{{ site.github }} on GitHub">GitHub</a>
+							<a href="{{ site.baseurl }}/feed/" class="rss icon-feed" title="RSS Feed">Feed</a>
 						</div><!-- /.social -->
 						<div class="links">
-							<a href="{{ rootFolder }}">A Link</a>
+							<a href="{{ site.baseurl }}/about/">About</a>
 						</div>
 					</div>
 				</nav>

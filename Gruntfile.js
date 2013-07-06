@@ -18,6 +18,7 @@ module.exports = function(grunt) {
 			root: '<%= siteConfig.rootDir %>',
 			jsSrc: '<%= urls.root %>js/',
 			cssSrc: '<%= urls.root %>css/',
+			iconsSrc: '<%= urls.root %>img/icons/',
 			distFolder: '<%= urls.root %>dist/<%= pkg.version %>/',
 			distFeed: '<%= urls.root %>_site/feed/atom.xml'
 		},
@@ -79,6 +80,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		grunticon: {
+			icons: {
+				options: {
+					src: '<%= urls.iconsSrc %>',
+					dest: "<%= urls.distFolder %>icons/",
+					customselectors: {
+						"twitter-active": ".icon-twitter:hover,.icon-twitter:focus",
+						"github-active": ".icon-github:hover,.icon-github:focus",
+						"feed-active": ".icon-feed:hover,.icon-feed:focus"
+					}
+				}
+			}
+		},
 		shell: {
 			jekyll: {
 				command: 'jekyll --no-auto',
@@ -114,8 +128,12 @@ module.exports = function(grunt) {
 				files: ['<%= urls.cssSrc %>**/*', '<%= urls.jsSrc %>**/*'],
 				tasks: ['default']
 			},
+			grunticon: {
+				files: ['<%= urls.iconsSrc %>**/*'],
+				tasks: ['grunticon']
+			},
 			content: {
-				files: ['<%= urls.root %>_posts/**/*', '<%= urls.root %>_layouts/**/*', '<%= urls.root %>speaking/**/*', '<%= urls.root %>projects/**/*', '<%= urls.root %>about/**/*', '<%= urls.root %>license/**/*', '<%= urls.root %>feed/**/*', '<%= urls.root %>index.html', '<%= urls.root %>_plugins/**/*', '<%= urls.root %>_includes/**/*' ],
+				files: ['<%= urls.root %>dist/**/*', '<%= urls.root %>_posts/**/*', '<%= urls.root %>_layouts/**/*', '<%= urls.root %>about/**/*', '<%= urls.root %>license/**/*', '<%= urls.root %>feed/**/*', '<%= urls.root %>index.html', '<%= urls.root %>_plugins/**/*', '<%= urls.root %>_includes/**/*' ],
 				tasks: ['content']
 			},
 			config: {
@@ -160,10 +178,8 @@ module.exports = function(grunt) {
 
 	// Default task.
 	grunt.registerTask('assets', ['concat:js', 'sass', 'uglify', 'cssmin']);
+	grunt.registerTask('images', ['grunticon']);
 	grunt.registerTask('config', ['yaml']);
 	grunt.registerTask('content', ['shell:jekyll', 'feedburner-size']);
-	grunt.registerTask('default', ['config', 'assets', 'content']);
-
-	// Call manually to save API calls
-	grunt.registerTask('presenters', ['shell:presenters']);
+	grunt.registerTask('default', ['config', 'assets', 'images', 'content']);
 };

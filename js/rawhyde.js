@@ -30,4 +30,8 @@ RawHyde.isEnhanced = function() {
 	}
 
 	doc.documentElement.className += ' ' + RawHyde.withJsDocClass;
+
+
+	var distMeta = doc.querySelector( 'meta[name="dist"]' );
+	RawHyde.dist = distMeta ? distMeta.content : '';
 })( document );
