@@ -72,16 +72,16 @@ body {
 	line-height: 140%;
 }
 :link {
-	color: #67a281;
+	color: $linkColor;
 }
 :visited {
-	color: #3c624b;
+	color: $linkVisitedColor;
 }
 :link:active,
 :link:hover,
 :link:focus,
 :visited:hover {
-	color: #d94625;
+	color: $linkFocusColor;
 }
 h1, h2, h3, h4, h5 {
 	font-weight: 700;
@@ -156,20 +156,22 @@ td.emulate { background-color: #40A662; color: #fff; }
 
 /* Logo and Rail */
 .rail a {
-	display: inline-block;
-	margin: 0 auto;
 	text-decoration: none;
 }
 .rail h1 {
 	font-size: 1.4em;
 	display: block;
 	color: #aaa;
-	width: 8em;
-	text-align: left;
 	overflow: hidden;
 	margin: 0;
 	vertical-align: middle;
+	text-align: center;
 }
+.rail h1:hover,
+.rail h1:focus {
+	color: #000;
+}
+
 .rail img {
 	float: left;
 	width: 50px;
