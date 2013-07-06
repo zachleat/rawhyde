@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{% if page.title %}{{ page.title }}—{{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+		<link href="/feed/" rel="alternate" title="{{ site.title }} Posts" type="application/atom+xml">
+
+		<link href="{{ site.distFolder }}global.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="rail">
+			<header>
+				<a href="{{ site.baseurl }}/">
+					<h1>{{ site.title }}</h1>
+				</a>
+			</header>
+			<aside>
+				<nav role="navigation">
+					<div class="navigation">
+						<div class="social">
+							<a href="//twitter.com/{{ site.twitter }}" class="twitter" title="@{{ site.twitter }} on Twitter">{{ site.twitter }}</a>
+							<a href="//github.com/{{ site.github }}/" class="github" title="@{{ site.github }} on GitHub">{{ site.github }}</a>
+							<a href="{{ site.baseurl }}/feed/" class="rss" title="RSS Feed">RSS</a>
+						</div><!-- /.social -->
+						<div class="links">
+							<a href="{{ rootFolder }}">A Link</a>
+						</div>
+					</div>
+				</nav>
+			</aside>
+		</div><!-- /.rail -->
+		<div class="content" data-role="main">
+			{{ content }}
+		</div><!-- /.content -->
+		<script src="{{ site.distFolder }}initial.min.js"></script>
+	</body>
+</html>
