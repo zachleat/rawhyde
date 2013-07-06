@@ -15,13 +15,6 @@ Use [NPM](http://npmjs.org) to install the dependencies.
 
 Output is generated into the `_site` directory.  As is, the site's hierarchy (subfolders for posts) means that all of the resources are referenced using absolute urls and the site must be hosted at `/`. Set up a Virtual Host for the `_site` directory and modify your `/etc/hosts` to map that to a local development domain of your choosing.
 
-#### Fetching Avatars
-
-Add the new Presenter’s twitter and github handles to `_avatars/users.json`
-
-    grunt avatars
-    grunt
-
 ### Credits
 
 Built by [@zachleat](https://twitter.com/zachleat).
