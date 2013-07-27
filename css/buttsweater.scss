@@ -50,7 +50,7 @@ img {
 		min-height: 32em;
 	}
 }
-@media (min-width: $twoColLayoutMinWidth) and (min-height: 25em) {
+@media (min-width: $twoColLayoutMinWidth) and (min-height: $twoColRailHeight) {
 	.rail {
 		position: fixed;
 	}
@@ -299,7 +299,7 @@ td.emulate { background-color: #40A662; color: #fff; }
 	}
 
 	.posts a {
-		padding: .5em 2em .5em 4em;
+		padding: .5em 2em .5em .307692308em; /* _ _ _ 8px */
 	}
 	.posts-count li:after {
 		pointer-events: none;
@@ -309,11 +309,6 @@ td.emulate { background-color: #40A662; color: #fff; }
 		content: "#" counter(start-from) "";
 		color: #ccc;
 		font-size: .625em; /* 10px */
-	}
-	.posts .date {
-		position: absolute;
-		left: .615384615em; /* 8px */
-		top: auto;
 	}
 }
 
@@ -441,7 +436,7 @@ td.emulate { background-color: #40A662; color: #fff; }
 	padding: .666666667em; /* 8px */
 	@include serifFont;
 	font-style: italic;
-	font-size: .75em; /* 12px */
+	font-size: .625em; /* 10px */
 	line-height: 120%;
 }
 .maxwidth .footer {
