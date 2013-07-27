@@ -57,7 +57,7 @@ module.exports = function(grunt) {
 					style: 'expanded'
 				},
 				files: {
-					'<%= urls.distFolder %>global.css': ['<%= urls.cssSrc %>buttsweater.scss', '<%= urls.cssSrc %>socialmenu.scss', '<%= urls.cssSrc %>thirdparty.scss', '<%= urls.cssSrc %>pygments.css']
+					'<%= urls.distFolder %>global.css': ['<%= urls.cssSrc %>buttsweater.scss', '<%= urls.cssSrc %>socialmenu.scss', '<%= urls.cssSrc %>thirdparty.scss', '<%= urls.cssSrc %>pygments.css', '<%= urls.cssSrc %>custom.css']
 				}
 			}
 		},
