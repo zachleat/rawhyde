@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 			root: '<%= siteConfig.rootDir %>',
 			jsSrc: '<%= urls.root %>js/',
 			cssSrc: '<%= urls.root %>css/',
-			iconsSrc: '<%= urls.root %>img/icons/',
+			imgSrc: '<%= urls.root %>img/',
+			iconsSrc: '<%= urls.imgSrc %>icons/',
 			distFolder: '<%= urls.root %>dist/<%= pkg.version %>/',
 			distFeed: '<%= urls.root %>_site/feed/atom.xml'
 		},
