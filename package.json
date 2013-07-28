@@ -22,7 +22,7 @@
 		"grunt-contrib-jshint": "~0.4.3",
 		"grunt-contrib-sass": "~0.3.0",
 		"matchdep": "~0.1.2",
-		"grunt-grunticon": "~0.3.3"
+		"grunt-grunticon": "~0.5.1"
 	},
 	"licenses": {
 		"MIT": true
